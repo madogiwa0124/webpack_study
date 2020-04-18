@@ -26,6 +26,18 @@ module.exports = {
     // 実行時にブラウザを開く
     open: true
   },
+  module: {
+    rules: [
+      // stylesheetのbuild用の設定
+      {
+        test: /\.css/,
+        use: [
+          "style-loader",
+          "css-loader"
+        ]
+      }
+    ]
+  },
   plugins: [
     // distのHTMLを自動生成するplugin、digest等をよしなに対応してくれる
     new HtmlWebpackPlugin(),
