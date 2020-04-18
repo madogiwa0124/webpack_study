@@ -7,14 +7,17 @@ module.exports = {
   mode: "development",
   // jsのエントリーポイント
   // デフォルトはsrc/index.js
-  entry: './src/index.js',
+  entry: {
+    main: './src/index.js',
+    home: './src/home.js'
+  },
   // 出力設定
   // デフォルトはdist/main.js
   output: {
     // 出力先のディレクトリ
     path: `${__dirname}/dist`,
     // 出力先のファイル
-    filename: 'main-[hash].js'
+    filename: '[name]-[hash].js'
   },
   // webpack-dev-server用の設定
   devServer: {
@@ -25,6 +28,15 @@ module.exports = {
   },
   plugins: [
     // distのHTMLを自動生成するplugin、digest等をよしなに対応してくれる
-    new HtmlWebpackPlugin()
+    new HtmlWebpackPlugin(),
+    // 個別のbuild後のjsを読み込むHTMLを生成
+    new HtmlWebpackPlugin({
+      filename: 'main.html',
+      chunks: ['main']
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'home.html',
+      chunks: ['home']
+    })
   ]
 }
