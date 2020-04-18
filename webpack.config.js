@@ -12,7 +12,7 @@ module.exports = {
     // 出力先のディレクトリ
     path: `${__dirname}/dist`,
     // 出力先のファイル
-    filename: 'main.js'
+    filename: 'main-[hash].js'
   },
   // webpack-dev-server用の設定
   devServer: {
