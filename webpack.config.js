@@ -13,5 +13,12 @@ module.exports = {
     path: `${__dirname}/dist`,
     // 出力先のファイル
     filename: 'main.js'
+  },
+  // webpack-dev-server用の設定
+  devServer: {
+    // webpackのoutput pathを指定
+    contentBase: `${__dirname}/dist`,
+    // 実行時にブラウザを開く
+    open: true
   }
 }
