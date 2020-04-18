@@ -1,3 +1,5 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+
 module.exports = {
   // ビルド時のモード
   // development: ビルド時間が短くソースマップに対応しているが容量の圧縮がかからない。
@@ -20,5 +22,9 @@ module.exports = {
     contentBase: `${__dirname}/dist`,
     // 実行時にブラウザを開く
     open: true
-  }
+  },
+  plugins: [
+    // distのHTMLを自動生成するplugin、digest等をよしなに対応してくれる
+    new HtmlWebpackPlugin()
+  ]
 }
