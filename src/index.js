@@ -1,4 +1,5 @@
-import { hello } from "./sub.js"
+import { hello, asyncHello } from "./sub.js"
 import "./styles/index.css"
 
 hello()
+asyncHello()
