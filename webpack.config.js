@@ -31,10 +31,11 @@ module.exports = {
     rules: [
       // stylesheetのbuild用の設定
       {
-        test: /\.css/,
+        test: /\.scss/,
         use: [
           "style-loader",
-          "css-loader"
+          "css-loader",
+          "sass-loader",
         ]
       },
       {
