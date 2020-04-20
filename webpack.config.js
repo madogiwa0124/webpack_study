@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 module.exports = {
   // ビルド時のモード
@@ -59,6 +60,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: 'home.html',
       chunks: ['home']
-    })
+    }),
+    new CleanWebpackPlugin(),
   ]
 }
