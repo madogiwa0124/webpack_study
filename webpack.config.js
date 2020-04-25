@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 const JAVASCRIPT_ENTRY_PATH = './src/javascripts/entries/'
+const HTML_TEMPLATE_PATH = './src/pages/'
 
 module.exports = {
   // ビルド時のモード
@@ -32,6 +33,10 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: /\.html/,
+        use: ["html-loader"]
+      },
       // stylesheetのbuild用の設定
       {
         test: /\.scss/,
@@ -64,10 +69,12 @@ module.exports = {
     // 個別のbuild後のjsを読み込むHTMLを生成
     new HtmlWebpackPlugin({
       filename: 'main.html',
+      template: `${HTML_TEMPLATE_PATH}main.html`,
       chunks: ['main']
     }),
     new HtmlWebpackPlugin({
       filename: 'home.html',
+      template: `${HTML_TEMPLATE_PATH}home.html`,
       chunks: ['home']
     }),
     new MiniCssExtractPlugin({
