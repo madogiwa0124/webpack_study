@@ -23,7 +23,7 @@ module.exports = {
   // デフォルトはsrc/index.js
   entry: {
     main: `${JAVASCRIPT_ENTRY_PATH}index.js`,
-    home: `${JAVASCRIPT_ENTRY_PATH}home.js`
+    home: `${JAVASCRIPT_ENTRY_PATH}home.ts`
   },
   // 出力設定
   // デフォルトはdist/main.js
@@ -69,8 +69,17 @@ module.exports = {
             ]
           }
         }
+      },
+      {
+        test: /\.ts/,
+        exclude: /(node_modules|bower_components)/,
+        use: ["ts-loader"]
       }
     ]
+  },
+  resolve: {
+    // import時にtsとjsを見分けられるようにするため拡張子を配列で指定
+    extensions: ['.ts', '.js']
   },
   plugins: [
     // 個別のbuild後のjsを読み込むHTMLを生成

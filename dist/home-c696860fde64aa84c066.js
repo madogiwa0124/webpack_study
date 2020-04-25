@@ -81,20 +81,32 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/javascripts/entries/home.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/javascripts/entries/home.ts");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/javascripts/entries/home.js":
+/***/ "./src/javascripts/components/tsSub.ts":
+/*!*********************************************!*\
+  !*** ./src/javascripts/components/tsSub.ts ***!
+  \*********************************************/
+/*! exports provided: Hey */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"Hey\", function() { return Hey; });\nvar Hey = /** @class */ (function () {\n    function Hey() {\n        this.msg = \"hey!!\";\n    }\n    Hey.prototype.call = function () {\n        console.log(this.msg);\n    };\n    return Hey;\n}());\n\n\n\n//# sourceURL=webpack:///./src/javascripts/components/tsSub.ts?");
+
+/***/ }),
+
+/***/ "./src/javascripts/entries/home.ts":
 /*!*****************************************!*\
-  !*** ./src/javascripts/entries/home.js ***!
+  !*** ./src/javascripts/entries/home.ts ***!
   \*****************************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_home_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../styles/home.scss */ \"./src/styles/home.scss\");\n/* harmony import */ var _styles_home_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_styles_home_scss__WEBPACK_IMPORTED_MODULE_0__);\n\nconsole.log(\"home!\");\n\n//# sourceURL=webpack:///./src/javascripts/entries/home.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _components_tsSub__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/tsSub */ \"./src/javascripts/components/tsSub.ts\");\n/* harmony import */ var _styles_home_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../styles/home.scss */ \"./src/styles/home.scss\");\n/* harmony import */ var _styles_home_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_styles_home_scss__WEBPACK_IMPORTED_MODULE_1__);\n\n\nconsole.log(\"home!\");\nvar hey = new _components_tsSub__WEBPACK_IMPORTED_MODULE_0__[\"Hey\"]();\nhey.call();\n\n\n//# sourceURL=webpack:///./src/javascripts/entries/home.ts?");
 
 /***/ }),
 

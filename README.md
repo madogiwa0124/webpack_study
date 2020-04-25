@@ -8,6 +8,7 @@ Webpack勉強用のリポジトリ
 * scssのcssへのビルド
 * babelを通したjsのビルド
 * htmlのビルド
+* typescriptのビルド
 * webpack-dev-serverでのビルド
 
 # コマンド
