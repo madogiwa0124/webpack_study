@@ -81,20 +81,20 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/home.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/javascripts/entries/home.js");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/home.js":
-/*!*********************!*\
-  !*** ./src/home.js ***!
-  \*********************/
+/***/ "./src/javascripts/entries/home.js":
+/*!*****************************************!*\
+  !*** ./src/javascripts/entries/home.js ***!
+  \*****************************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_home_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/home.scss */ \"./src/styles/home.scss\");\n/* harmony import */ var _styles_home_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_styles_home_scss__WEBPACK_IMPORTED_MODULE_0__);\n\nconsole.log(\"home!\");\n\n//# sourceURL=webpack:///./src/home.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_home_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../styles/home.scss */ \"./src/styles/home.scss\");\n/* harmony import */ var _styles_home_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_styles_home_scss__WEBPACK_IMPORTED_MODULE_0__);\n\nconsole.log(\"home!\");\n\n//# sourceURL=webpack:///./src/javascripts/entries/home.js?");
 
 /***/ }),
 

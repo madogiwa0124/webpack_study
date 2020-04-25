@@ -2,6 +2,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
+const JAVASCRIPT_ENTRY_PATH = './src/javascripts/entries/'
+
 module.exports = {
   // ビルド時のモード
   // development: ビルド時間が短くソースマップに対応しているが容量の圧縮がかからない。
@@ -10,8 +12,8 @@ module.exports = {
   // jsのエントリーポイント
   // デフォルトはsrc/index.js
   entry: {
-    main: './src/index.js',
-    home: './src/home.js'
+    main: `${JAVASCRIPT_ENTRY_PATH}index.js`,
+    home: `${JAVASCRIPT_ENTRY_PATH}home.js`
   },
   // 出力設定
   // デフォルトはdist/main.js
