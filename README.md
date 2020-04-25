@@ -10,6 +10,7 @@ Webpack勉強用のリポジトリ
 * htmlのビルド
 * typescriptのビルド
 * webpack-dev-serverでのビルド
+* vue、vue-class-componentのビルド
 
 # コマンド
 
@@ -23,7 +24,8 @@ Webpack勉強用のリポジトリ
 src
  ├ javascripts
  │ ├ entries    // webpackのエントリーファイル
- │ └ components // コンポーネント格納用
+ │ ├ components // コンポーネント格納用
+ │ └ types      // typescriptの型定義ファイル格納用
  ├ styles        // stylesheet格納用(scss)
  └ pages         // htmlのtamplate格納用
 ```

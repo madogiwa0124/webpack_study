@@ -1,5 +1,6 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 const JAVASCRIPT_ENTRY_PATH = './src/javascripts/entries/'
@@ -73,13 +74,25 @@ module.exports = {
       {
         test: /\.ts/,
         exclude: /(node_modules|bower_components)/,
-        use: ["ts-loader"]
-      }
+        loader: "ts-loader",
+        options: {
+          // /vueをtypescriptとして扱う
+          appendTsSuffixTo: [/\.vue/]
+        }
+      },
+      {
+        test: /\.vue/,
+        loader: 'vue-loader'
+      },
     ]
   },
   resolve: {
     // import時にtsとjsを見分けられるようにするため拡張子を配列で指定
-    extensions: ['.ts', '.js']
+    extensions: ['.ts', '.js', '.vue'],
+    // Webpackで利用するときの設定
+    alias: {
+      vue: "vue/dist/vue.js"
+    }
   },
   plugins: [
     // 個別のbuild後のjsを読み込むHTMLを生成
@@ -89,5 +102,7 @@ module.exports = {
     new MiniCssExtractPlugin({filename: '[name]-[hash].css'}),
     // build後に古いファイルを消す
     new CleanWebpackPlugin(),
+    // vue-loaderの有効化
+    new VueLoaderPlugin()
   ]
 }
