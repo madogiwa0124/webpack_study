@@ -68,7 +68,9 @@ module.exports = {
       filename: 'home.html',
       chunks: ['home']
     }),
-    new MiniCssExtractPlugin(),
+    new MiniCssExtractPlugin({
+      filename: '[name]-[hash].css'
+    }),
     new CleanWebpackPlugin(),
   ]
 }
