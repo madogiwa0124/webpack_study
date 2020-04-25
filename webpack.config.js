@@ -5,6 +5,15 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const JAVASCRIPT_ENTRY_PATH = './src/javascripts/entries/'
 const HTML_TEMPLATE_PATH = './src/pages/'
 
+// NOTE: entryと同名のhtmlファイルのHtmlWebpackPluginの引数を生成するメソッド
+const PageObject = entryName => {
+  return {
+    filename: `${entryName}.html`,
+    template: `${HTML_TEMPLATE_PATH}${entryName}.html`,
+    chunks: [entryName]
+  }
+}
+
 module.exports = {
   // ビルド時のモード
   // development: ビルド時間が短くソースマップに対応しているが容量の圧縮がかからない。
@@ -64,22 +73,12 @@ module.exports = {
     ]
   },
   plugins: [
-    // distのHTMLを自動生成するplugin、digest等をよしなに対応してくれる
-    new HtmlWebpackPlugin(),
     // 個別のbuild後のjsを読み込むHTMLを生成
-    new HtmlWebpackPlugin({
-      filename: 'main.html',
-      template: `${HTML_TEMPLATE_PATH}main.html`,
-      chunks: ['main']
-    }),
-    new HtmlWebpackPlugin({
-      filename: 'home.html',
-      template: `${HTML_TEMPLATE_PATH}home.html`,
-      chunks: ['home']
-    }),
-    new MiniCssExtractPlugin({
-      filename: '[name]-[hash].css'
-    }),
+    new HtmlWebpackPlugin(PageObject('main')),
+    new HtmlWebpackPlugin(PageObject('home')),
+    // CSSを別ファイルでbuildする
+    new MiniCssExtractPlugin({filename: '[name]-[hash].css'}),
+    // build後に古いファイルを消す
     new CleanWebpackPlugin(),
   ]
 }
