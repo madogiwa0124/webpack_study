@@ -4,11 +4,12 @@ import { Hey } from "../components/tsSub"
 // 何故かmoduleが見つからなくなる
 import TsCounter from "../components/tsCounter.vue"
 import JsCounter from "../components/jsCounter.vue"
+import CommentList from "../components/CommentList.vue"
 import "../../styles/home.scss"
 
 new Vue({
   el: "#vue-root",
-  components: { TsCounter, JsCounter },
+  components: { TsCounter, JsCounter, CommentList },
 })
 
 console.log("home!")
