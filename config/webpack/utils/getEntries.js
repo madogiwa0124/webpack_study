@@ -1,5 +1,5 @@
-const glob = require('glob');
-const path = require('path');
+const glob = require("glob");
+const path = require("path");
 
 /**
  * 指定したentryのルートディレクトリ配下のjsまたはtsファイルのファイル名とパスのobjectを取得
@@ -8,8 +8,10 @@ const path = require('path');
  * @param {string} entryRoot entryのルートディレクトリ
  */
 module.exports = function getEntries(entryRoot) {
-  const ret = {}
-  const filePaths = glob.sync(`${entryRoot}/*.{js,ts}`)
-  filePaths.forEach(filePath => { ret[path.basename(filePath, path.extname(filePath))] = filePath })
-  return ret
-}
+  const ret = {};
+  const filePaths = glob.sync(`${entryRoot}/*.{js,ts}`);
+  filePaths.forEach((filePath) => {
+    ret[path.basename(filePath, path.extname(filePath))] = filePath;
+  });
+  return ret;
+};

@@ -2,10 +2,10 @@ export class Hey {
   msg: string;
 
   constructor() {
-      this.msg = "hey!!";
+    this.msg = "hey!!";
   }
 
   call(): void {
-      console.log(this.msg);
+    console.log(this.msg);
   }
 }

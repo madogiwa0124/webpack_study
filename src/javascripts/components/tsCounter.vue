@@ -10,7 +10,7 @@
   </div>
 </template>
 <script lang="ts">
-import Vue from 'vue'
+import Vue from "vue";
 
 interface Data {
   count: number;
@@ -19,22 +19,22 @@ interface Data {
 export default Vue.extend({
   props: {
     initCount: {
-       type: Number,
-       default: 0
-    }
+      type: Number,
+      default: 0,
+    },
   },
   data(): Data {
     return {
-      count: this.initCount
-    }
+      count: this.initCount,
+    };
   },
   methods: {
     decrement(num: number) {
       this.count -= num;
     },
     increment(num: number) {
-      this.count += num
-    }
-  }
-})
+      this.count += num;
+    },
+  },
+});
 </script>

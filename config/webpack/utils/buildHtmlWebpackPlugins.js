@@ -1,4 +1,4 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 /**
  * 指定したentriesと同名のhtmlテンプレートを読み込みHtmlWebpackPluginを生成する
@@ -8,10 +8,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
  */
 module.exports = function buildHtmlWebpackPlugins(entries, templateRootPath) {
   return Object.keys(entries, templateRootPath).map(
-    entryName => new HtmlWebpackPlugin({
-      filename: `${entryName}.html`,
-      template: `${templateRootPath}${entryName}.html`,
-      chunks: [entryName]
-    })
-  )
-}
+    (entryName) =>
+      new HtmlWebpackPlugin({
+        filename: `${entryName}.html`,
+        template: `${templateRootPath}${entryName}.html`,
+        chunks: [entryName],
+      })
+  );
+};
