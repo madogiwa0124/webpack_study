@@ -2,6 +2,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const getEntries = require('./config/webpack/utils/getEntries.js')
 
 const JAVASCRIPT_ENTRY_PATH = './src/javascripts/entries/'
 const HTML_TEMPLATE_PATH = './src/pages/'
@@ -22,10 +23,8 @@ module.exports = {
   mode: "development",
   // jsのエントリーポイント
   // デフォルトはsrc/index.js
-  entry: {
-    main: `${JAVASCRIPT_ENTRY_PATH}index.js`,
-    home: `${JAVASCRIPT_ENTRY_PATH}home.ts`
-  },
+  // ここではentriesを渡してJAVASCRIPT_ENTRY_PATH配下のjs/tsをentryとするようにしている
+  entry: getEntries(JAVASCRIPT_ENTRY_PATH),
   // 出力設定
   // デフォルトはdist/main.js
   output: {

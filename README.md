@@ -5,6 +5,8 @@ Webpack勉強用のリポジトリ
 今のところできること
 
 * digest付きのcss、jsのビルド
+  - 指定したディレクトリ(`/src/javascripts/entries`)配下のjs,tsファイルを自動的にエントリーとする
+    例) /entries/foo.ts => { foo: "/entries/foo.ts" }
 * scssのcssへのビルド
 * babelを通したjsのビルド
 * htmlのビルド
