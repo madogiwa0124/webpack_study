@@ -10,6 +10,8 @@ Webpack勉強用のリポジトリ
 * scssのcssへのビルド
 * babelを通したjsのビルド
 * htmlのビルド
+  - エントリーファイルと自動的に結びつくように
+    例) pages/home.htmlだったらentries/home.jsが読み込まれる
 * typescriptのビルド
 * webpack-dev-serverでのビルド
 * vueのビルド

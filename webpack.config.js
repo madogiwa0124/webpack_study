@@ -1,20 +1,12 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const getEntries = require('./config/webpack/utils/getEntries.js')
+const buildHtmlWebpackPlugins = require('./config/webpack/utils/buildHtmlWebpackPlugins.js')
 
 const JAVASCRIPT_ENTRY_PATH = './src/javascripts/entries/'
 const HTML_TEMPLATE_PATH = './src/pages/'
-
-// NOTE: entryと同名のhtmlファイルのHtmlWebpackPluginの引数を生成するメソッド
-const PageObject = entryName => {
-  return {
-    filename: `${entryName}.html`,
-    template: `${HTML_TEMPLATE_PATH}${entryName}.html`,
-    chunks: [entryName]
-  }
-}
+const entries = getEntries(JAVASCRIPT_ENTRY_PATH)
 
 module.exports = {
   // ビルド時のモード
@@ -24,7 +16,7 @@ module.exports = {
   // jsのエントリーポイント
   // デフォルトはsrc/index.js
   // ここではentriesを渡してJAVASCRIPT_ENTRY_PATH配下のjs/tsをentryとするようにしている
-  entry: getEntries(JAVASCRIPT_ENTRY_PATH),
+  entry: entries,
   // 出力設定
   // デフォルトはdist/main.js
   output: {
@@ -95,8 +87,7 @@ module.exports = {
   },
   plugins: [
     // 個別のbuild後のjsを読み込むHTMLを生成
-    new HtmlWebpackPlugin(PageObject('main')),
-    new HtmlWebpackPlugin(PageObject('home')),
+    ...buildHtmlWebpackPlugins(entries, HTML_TEMPLATE_PATH),
     // CSSを別ファイルでbuildする
     new MiniCssExtractPlugin({filename: '[name]-[hash].css'}),
     // build後に古いファイルを消す
