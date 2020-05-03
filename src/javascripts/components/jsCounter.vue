@@ -1,27 +1,27 @@
 <template>
   <div>
-    <button v-on:click="decrement">-</button>
+    <button @click="decrement(1)">-</button>
     {{ count }}
-    <button v-on:click="increment">+</button>
+    <button @click="increment(1)">+</button>
   </div>
 </template>
 <script lang="js">
-import Vue from 'vue'
-import Component from 'vue-class-component'
-
-// Define the component in class-style
-@Component
-export default class JsCounter extends Vue {
-  // Class properties will be component data
-  count = 0
-
-  // Methods will be component methods
-  increment() {
-    this.count++
-  }
-
-  decrement() {
-    this.count--
+module.exports = {
+  props: {
+    initCount: Number
+  },
+  data: function () {
+    return {
+      count: this.initCount | 0
+    }
+  },
+  methods: {
+    decrement(num) {
+      this.count -= num;
+    },
+    increment(num) {
+      this.count += num
+    }
   }
 }
 </script>

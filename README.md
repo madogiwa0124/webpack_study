@@ -10,7 +10,7 @@ Webpack勉強用のリポジトリ
 * htmlのビルド
 * typescriptのビルド
 * webpack-dev-serverでのビルド
-* vue、vue-class-componentのビルド
+* vueのビルド
 
 # コマンド
 

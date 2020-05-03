@@ -1,27 +1,33 @@
 <template>
   <div>
-    <button v-on:click="decrement">-</button>
+    <button @click="decrement(1)">-</button>
     {{ count }}
-    <button v-on:click="increment">+</button>
+    <button @click="increment(1)">+</button>
   </div>
 </template>
 <script lang="ts">
 import Vue from 'vue'
-import Component from 'vue-class-component'
 
-// Define the component in class-style
-@Component
-export default class TsCounter extends Vue {
-  // Class properties will be component data
-  count:number = 0
-
-  // Methods will be component methods
-  increment() {
-    this.count++
-  }
-
-  decrement() {
-    this.count--
-  }
+interface Data {
+  count: number
 }
+
+export default Vue.extend({
+  props: {
+    initCount: Number
+  },
+  data() : Data {
+    return {
+      count: this.initCount | 0
+    }
+  },
+  methods: {
+    decrement(num: number) {
+      this.count -= num;
+    },
+    increment(num: number) {
+      this.count += num
+    }
+  }
+})
 </script>
