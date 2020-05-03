@@ -5,7 +5,7 @@ export class Hey {
       this.msg = "hey!!";
   }
 
-  call() {
+  call(): void {
       console.log(this.msg);
   }
 }

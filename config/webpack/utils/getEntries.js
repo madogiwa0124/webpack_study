@@ -8,7 +8,7 @@ const path = require('path');
  * @param {string} entryRoot entryのルートディレクトリ
  */
 module.exports = function getEntries(entryRoot) {
-  let ret = {}
+  const ret = {}
   const filePaths = glob.sync(`${entryRoot}/*.{js,ts}`)
   filePaths.forEach(filePath => { ret[path.basename(filePath, path.extname(filePath))] = filePath })
   return ret

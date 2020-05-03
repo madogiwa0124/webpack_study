@@ -1,8 +1,12 @@
 <template>
   <div>
-    <button @click="decrement(1)">-</button>
+    <button @click="decrement(1)">
+      -
+    </button>
     {{ count }}
-    <button @click="increment(1)">+</button>
+    <button @click="increment(1)">
+      +
+    </button>
   </div>
 </template>
 <script lang="js">
