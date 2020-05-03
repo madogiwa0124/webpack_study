@@ -15,6 +15,7 @@ Webpack勉強用のリポジトリ
 * typescriptのビルド
 * webpack-dev-serverでのビルド
 * vueのビルド
+* eslint(`eslint-plugin-vue`, `@typescript-eslint/eslint-plugin`)による静的解析
 
 # コマンド
 

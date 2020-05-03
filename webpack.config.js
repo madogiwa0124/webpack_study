@@ -48,6 +48,12 @@ module.exports = {
         ]
       },
       {
+        enforce: "pre",
+        test: /\.js|\.ts|\.vue$/,
+        exclude: /node_modules/,
+        loader: "eslint-loader",
+      }
+      ,{
         test: /\.m?js$/,
         exclude: /(node_modules|bower_components)/,
         use: {
