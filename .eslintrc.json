@@ -5,7 +5,7 @@
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended"
   ],
-  "plugins": ["@typescript-eslint"],
+  "plugins": ["@typescript-eslint", "prettier"],
   "parser": "vue-eslint-parser",
   "parserOptions": {
     "parser": "@typescript-eslint/parser",
@@ -19,7 +19,9 @@
     "node": true
   },
   "globals": {},
-  "rules": {},
+  "rules": {
+    "prettier/prettier": "error"
+  },
   "overrides": [
     {
       "files": ["*.js", "*.vue"],
