@@ -8,6 +8,11 @@
     "strict": true,
     "moduleResolution": "node",
     // デコレーターを有効に設定
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "baseUrl": "./",
+    "paths": {
+      "@js/*": ["src/javascripts/*"],
+      "@css/*": ["src/styles/*"],
+    }
   }
 }

@@ -85,6 +85,8 @@ module.exports = {
     // Webpackで利用するときの設定
     alias: {
       vue: "vue/dist/vue.js",
+      "@js": `${__dirname}/src/javascripts`,
+      "@css": `${__dirname}/src/styles`,
     },
   },
   plugins: [
