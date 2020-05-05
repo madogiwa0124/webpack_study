@@ -40,7 +40,7 @@ module.exports = {
       },
       // stylesheetのbuild用の設定
       {
-        test: /\.scss/,
+        test: /\.scss|\.css/,
         use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
       },
       {
