@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="js-counter">
     <button @click="decrement(1)">
       -
     </button>
@@ -29,3 +29,8 @@ module.exports = {
   }
 }
 </script>
+<style lang="css" scoped>
+.js-counter {
+  color: yellow;
+}
+</style>

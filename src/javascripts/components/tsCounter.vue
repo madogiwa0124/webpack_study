@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="ts-counter">
     <button @click="decrement(1)">
       -
     </button>
@@ -38,3 +38,8 @@ export default Vue.extend({
   },
 });
 </script>
+<style lang="scss" scoped>
+.ts-counter {
+  color: blue;
+}
+</style>
