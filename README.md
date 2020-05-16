@@ -17,6 +17,7 @@ Webpack勉強用のリポジトリ
 * vueのビルド
 * eslint(`eslint-plugin-vue`, `@typescript-eslint/eslint-plugin`)による静的解析
 * pritterによるコードフォーマット
+* jsonのビルド
 
 # コマンド
 

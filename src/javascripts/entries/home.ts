@@ -5,12 +5,14 @@ import { Hey } from "../components/tsSub";
 import TsCounter from "../components/tsCounter.vue";
 import JsCounter from "../components/jsCounter.vue";
 import "../../styles/home.scss";
+import SampleJson from "../samples/sample.json";
 
 new Vue({
   el: "#vue-root",
   components: { TsCounter, JsCounter },
 });
 
+console.log(SampleJson);
 console.log("home!");
 const hey = new Hey();
 hey.call();
