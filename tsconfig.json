@@ -8,6 +8,8 @@
     "strict": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
+    // 返り値の型を明示的に指定させる
+    "noImplicitReturns": true,
     // デコレーターを有効に設定
     "experimentalDecorators": true,
     "baseUrl": "./",
