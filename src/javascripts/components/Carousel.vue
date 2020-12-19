@@ -6,6 +6,16 @@
       <swiper-slide>Slide 3</swiper-slide>
       <swiper-slide>Slide 4</swiper-slide>
       <swiper-slide>Slide 5</swiper-slide>
+      <swiper-slide>Slide 6</swiper-slide>
+      <swiper-slide>Slide 7</swiper-slide>
+      <swiper-slide>Slide 8</swiper-slide>
+      <swiper-slide>Slide 9</swiper-slide>
+      <swiper-slide>Slide 10</swiper-slide>
+      <swiper-slide>Slide 11</swiper-slide>
+      <swiper-slide>Slide 12</swiper-slide>
+      <swiper-slide>Slide 13</swiper-slide>
+      <swiper-slide>Slide 14</swiper-slide>
+      <swiper-slide>Slide 15</swiper-slide>
       <div slot="pagination" class="swiper-pagination" />
     </swiper>
   </div>
@@ -25,11 +35,24 @@ export default {
   data() {
     return {
       swiperOptions: {
-        loop: true,
-        centeredSlides: true,
         slidesPerView: 1.5,
+        slidesPerGroup: 1,
+        slidesPerColumn: 1,
+        slidesPerColumnFill: "column",
+        centeredSlides: true,
+        loop: true,
         watchOverflow: true,
         spaceBetween: 16,
+        breakpoints: {
+          480: {
+            slidesPerView: 3,
+            slidesPerGroup: 3,
+            slidesPerColumn: 2,
+            slidesPerColumnFill: "row",
+            loop: false,
+            centeredSlides: false,
+          },
+        },
         pagination: {
           el: ".swiper-pagination",
         },
@@ -60,6 +83,7 @@ export default {
 .carousel {
   .swiper-container {
     color: white;
+    width: 100%;
 
     .swiper-slide {
       background-color: burlywood;
