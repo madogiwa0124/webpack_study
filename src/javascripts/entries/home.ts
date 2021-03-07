@@ -4,12 +4,13 @@ import { Hey } from "../components/tsSub";
 // 何故かmoduleが見つからなくなる
 import TsCounter from "../components/tsCounter.vue";
 import JsCounter from "../components/jsCounter.vue";
+import MoreRead from "../components/MoreRead.vue";
 import "../../styles/home.scss";
 import SampleJson from "../samples/sample.json";
 
 new Vue({
   el: "#vue-root",
-  components: { TsCounter, JsCounter },
+  components: { TsCounter, JsCounter, MoreRead },
 });
 
 console.log(SampleJson);
