@@ -1,36 +1,33 @@
 <template>
   <div class="ts-counter">
     <button @click="decrement(1)">-</button>
-    {{ count }}
+    {{ state.count }}
     <button @click="increment(1)">+</button>
   </div>
 </template>
 <script lang="ts">
-import Vue from "vue";
+import { defineComponent, reactive } from "vue";
 
 interface Data {
   count: number;
 }
 
-export default Vue.extend({
+interface Props {
+  initCount: number;
+}
+
+export default defineComponent({
   props: {
     initCount: {
       type: Number,
       default: 0,
     },
   },
-  data(): Data {
-    return {
-      count: this.initCount,
-    };
-  },
-  methods: {
-    decrement(num: number) {
-      this.count -= num;
-    },
-    increment(num: number) {
-      this.count += num;
-    },
+  setup(props: Props) {
+    const state = reactive<Data>({ count: props.initCount });
+    const decrement = (num: number) => (state.count -= num);
+    const increment = (num: number) => (state.count += num);
+    return { state, decrement, increment };
   },
 });
 </script>

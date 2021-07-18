@@ -6,9 +6,14 @@
   </div>
 </template>
 <script lang="js">
-module.exports = {
+import { defineComponent } from "vue";
+
+export default defineComponent({
   props: {
-    initCount: Number
+    initCount: {
+      type: Number,
+      default: 0
+      }
   },
   data: function () {
     return {
@@ -23,7 +28,7 @@ module.exports = {
       this.count += num
     }
   }
-}
+})
 </script>
 <style lang="css" scoped>
 .js-counter {

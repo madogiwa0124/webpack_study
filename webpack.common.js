@@ -1,6 +1,7 @@
+const webpack = require("webpack");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const VueLoaderPlugin = require("vue-loader/lib/plugin");
+const { VueLoaderPlugin } = require("vue-loader");
 
 const getEntries = require("./config/webpack/utils/getEntries");
 const buildHtmlWebpackPlugins = require("./config/webpack/utils/buildHtmlWebpackPlugins.js");
@@ -67,7 +68,7 @@ module.exports = {
   },
   resolve: {
     alias: {
-      vue: "vue/dist/vue.js",
+      vue: "vue/dist/vue.esm-bundler.js",
       "@js": `${__dirname}/src/javascripts`,
       "@css": `${__dirname}/src/styles`,
     },
@@ -81,5 +82,9 @@ module.exports = {
     // build後に古いファイルを消す
     new CleanWebpackPlugin(),
     new VueLoaderPlugin(),
+    new webpack.DefinePlugin({
+      __VUE_OPTIONS_API__: true,
+      __VUE_PROD_DEVTOOLS__: false,
+    }),
   ],
 };
