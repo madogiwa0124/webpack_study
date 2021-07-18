@@ -12,10 +12,14 @@
     "noImplicitReturns": true,
     // デコレーターを有効に設定
     "experimentalDecorators": true,
+    "skipLibCheck": true,
     "baseUrl": "./",
     "paths": {
       "@js/*": ["src/javascripts/*"],
       "@css/*": ["src/styles/*"],
-    }
-  }
+    },
+  },
+  "exclude": [
+    "node_modules"
+  ]
 }
