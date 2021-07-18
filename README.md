@@ -21,9 +21,9 @@ Webpack勉強用のリポジトリ
 
 # コマンド
 
-* `npm run build` : webpackのビルド
-* `npm run build-watch` : webpackにwatchオプションを付けてビルド
-* `npm run build-dev-server` : webpack-dev-serverの起動
+* `npm run build` : webpackの本番用ビルド
+* `npm run buld:dev` : webpackの開発用のビルド
+* `npm run buld:dev-watch` : webpackにwatchオプションを付けて開発用のビルド
 
 # 構成
 
