@@ -9,7 +9,7 @@
   "parser": "vue-eslint-parser",
   "parserOptions": {
     "parser": "@typescript-eslint/parser",
-    "ecmaVersion": 2017,
+    "ecmaVersion": 2020,
     "sourceType": "module",
     "extraFileExtensions": [".vue"]
   },
@@ -24,11 +24,12 @@
   },
   "overrides": [
     {
-      "files": ["*.js", "*.vue"],
+      "files": ["*.js", "*.vue", "*.ts"],
       "rules": {
         "@typescript-eslint/no-var-requires": "off",
         "@typescript-eslint/explicit-function-return-type": "off",
-        "vue/singleline-html-element-content-newline": "off"
+        "vue/singleline-html-element-content-newline": "off",
+        "vue/script-setup-uses-vars": "off"
       }
     }
   ]
