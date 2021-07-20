@@ -2,11 +2,9 @@ name: github pages
 
 on:
   push:
-    branches:
-      - master
 
 jobs:
-  build-deploy:
+  lint:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -21,10 +19,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: install deps
         run: npm install
-      - name: run build
+      - name: Lint
+        run: npm run lint
+      - name: run build test
         run: npm run build
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          personal_token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-          publish_dir: ./dist
