@@ -13,11 +13,11 @@ Webpack勉強用のリポジトリ
   - エントリーファイルと自動的に結びつくように
     例) pages/home.htmlだったらentries/home.jsが読み込まれる
 * typescriptのビルド
-* webpack-dev-serverでのビルド
 * vueのビルド
 * eslint(`eslint-plugin-vue`, `@typescript-eslint/eslint-plugin`)による静的解析
 * pritterによるコードフォーマット
 * jsonのビルド
+* jestによるVueComponentのSnapshotテスト
 
 # コマンド
 

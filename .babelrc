@@ -1,2 +1,4 @@
 {
+  "presets": ["@babel/preset-env"],
+  "plugins": []
 }
