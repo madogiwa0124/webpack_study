@@ -18,6 +18,7 @@ Webpack勉強用のリポジトリ
 * pritterによるコードフォーマット
 * jsonのビルド
 * jestによるVueComponentのSnapshotテスト
+* StoryBookによるコンポーネントのドキュメント化
 
 # コマンド
 
