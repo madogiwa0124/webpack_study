@@ -30,7 +30,7 @@
     "@storybook/builder-webpack5": "^6.3.6",
     "@storybook/manager-webpack5": "^6.3.6",
     "@storybook/vue3": "^6.3.6",
-    "@types/jest": "^26.0.24",
+    "@types/jest": "^27.0.1",
     "@typescript-eslint/eslint-plugin": "^2.30.0",
     "@typescript-eslint/parser": "^2.30.0",
     "@vue/compiler-sfc": "^3.1.5",
