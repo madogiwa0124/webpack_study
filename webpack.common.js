@@ -21,7 +21,7 @@ module.exports = {
     // 出力先のディレクトリ
     path: `${__dirname}/dist`,
     // 出力先のファイル
-    filename: "[name]-[hash].js",
+    filename: "[name]-[contenthash].js",
   },
   module: {
     rules: [
