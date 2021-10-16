@@ -1,4 +1,5 @@
 module.exports = {
+  testEnvironment: "jsdom",
   // Automatically clear mock calls and instances between every test
   clearMocks: true,
 
@@ -24,6 +25,6 @@ module.exports = {
   transform: {
     "^.+\\.js$": "babel-jest",
     "^.+\\.ts$": "ts-jest",
-    ".*\\.(vue)$": "vue-jest",
+    ".*\\.(vue)$": "@vue/vue3-jest",
   },
 };
